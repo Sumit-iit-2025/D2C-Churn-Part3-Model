@@ -9,14 +9,19 @@
 * **Observation:** The model misses churners who recently had a terrible support experience if their historical buying frequency was very high.
 
 ## 3. Manual Review of 10 Specific Cases
-*(Note: Replace these IDs and notes with actual outputs from your test set analysis)*
-1. **CUST02352:** False Positive. High web activity, zero purchases in 30 days. Model thought they were leaving, but they were just browsing before a big holiday purchase.
-2. **CUST02364:** False Negative. High historical spend, but an unresolved 40-hour support ticket caused them to leave. Model under-weighted the negative ticket rate.
-3. [Add CUST_ID 3]
-4. [Add CUST_ID 4]
-5. [Add CUST_ID 5]
-6. [Add CUST_ID 6]
-7. [Add CUST_ID 7]
-8. [Add CUST_ID 8]
-9. [Add CUST_ID 9]
-10. [Add CUST_ID 10]
+--- FALSE POSITIVES (Predicted Churn, but they Stayed) ---
+customer_id  actual_churn  predicted_churn  support_tickets  recent_spend
+  CUST02054             0                1                0        818.75
+  CUST01969             0                1                1       1641.00
+  CUST00437             0                1                0        729.22
+  CUST00734             0                1                0       2020.81
+  CUST00332             0                1                2       2059.80
+
+  --- FALSE NEGATIVES (Predicted Stay, but they Churned) ---
+customer_id  actual_churn  predicted_churn  support_tickets  recent_spend
+  CUST01801             1                0                1        371.61
+  CUST02238             1                0                1       3352.75
+  CUST00591             1                0                0        865.39
+  CUST01133             1                0                0        779.15
+  CUST00867             1                0                1        424.64
+
