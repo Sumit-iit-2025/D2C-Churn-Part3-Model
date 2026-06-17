@@ -1,0 +1,15 @@
+{
+    "model": "XGBoost",
+    "threshold_used": 0.35,
+    "accuracy": 0.7666666666666667,
+    "confusion_matrix": [
+        [
+            183,
+            72
+        ],
+        [
+            40,
+            185
+        ]
+    ]
+}
